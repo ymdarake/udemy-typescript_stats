@@ -1,10 +1,9 @@
 import { MatchReader } from './MatchReader';
+import { CsvFileReader } from './CsvFileReader';
 
-const reader = new MatchReader('football.csv');
-reader.read();
+const reader = new MatchReader(new CsvFileReader('football.csv'));
+reader.load();
 
-for (let match of reader.data) {
+for (let match of reader.matches) {
   console.log(match);
 }
-
-// for (let match of matches)
